@@ -4,7 +4,12 @@ const port = 3000; // Você pode mudar para a porta que preferir
 
 // Definir uma rota básica
 app.get("/", (req, res) => {
-  res.send("Olá, Mundo!");
+  console.log(req.ip);
+  const userIp = req.headers["x-forwarded-for"] || req.connection.remoteAddress;
+
+  res.send(
+    `Olá, Mundo! IP do usuário: ${userIp} ${req.headers["user-agent"]}  `
+  );
 });
 
 // Iniciar o servidor
