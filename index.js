@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = 3000; // Você pode mudar para a porta que preferir
+const port = 80; 
 
 // Definir uma rota básica
 app.get("/", (req, res) => {
